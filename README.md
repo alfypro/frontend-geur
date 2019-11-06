@@ -1,6 +1,6 @@
-# Angularbp
+# Frontend GEUR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Proyecto para generar urls ofuscadas. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 ## Development server
 
