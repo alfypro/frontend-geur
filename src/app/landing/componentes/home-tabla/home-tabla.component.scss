@@ -1,0 +1,31 @@
+.desborde a {
+    display: block;
+    width: 935px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  @media (max-width: 1200px){
+    .desborde a {
+      width: 755px;
+    }
+  }
+  
+  @media (max-width: 992px){
+    .desborde a {
+      width: 525px;
+    }
+  }
+  
+  @media (max-width: 768px){
+    .desborde a {
+      width: 340px;
+    }
+  }
+  
+  @media (max-width: 572px){
+    .scroll {
+      overflow-x: auto;
+    }
+  }
