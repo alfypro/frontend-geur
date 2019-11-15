@@ -6,8 +6,15 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-    imports: [CommonModule, AppRoutingModule],
-    declarations: [LayoutComponent, HeaderComponent, FooterComponent],
+    imports: [
+        CommonModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        LayoutComponent,
+        HeaderComponent,
+        FooterComponent
+    ],
     exports: [LayoutComponent]
 })
 export class UiModule {}

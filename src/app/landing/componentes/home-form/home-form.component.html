@@ -1,43 +1,57 @@
-<form>
-    <div class="form-row">
-      <div class="form-group col-md-3">
-        <label>Identificador *</label>
-        <input type="text" class="form-control form-control-sm" placeholder="Id">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Tipo de id *</label>
-        <select class="form-control form-control-sm">
-          <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
-        </select>
-      </div>
-      <div class="form-group col-md-3" *ngIf="proyecto === 'GECO'">
-        <label>Probicional Id</label>
-        <input class="form-control form-control-sm" placeholder="Probicional Id">
-      </div>
-      <div class="form-group col-md-3" *ngIf="proyecto === 'GECO'">
-        <label>Conditional Id</label>
-        <input class="form-control form-control-sm" placeholder="Conditional Id">
-      </div>
-      <div class="form-group col-md-6" *ngIf="proyecto === 'HSU'">
-        <label>/&lt;código-vista&gt;/&lt;clasificación&gt;/&lt;origen&gt;/&lt;bloque&gt;</label>
-        <input class="form-control form-control-sm" placeholder="Ej: /hspr/persona/pers">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label>Identificador *</label>
+      <input type="text" formControlName="id" class="form-control form-control-sm"
+        [ngClass]="{ 'is-invalid': submitted && f.id.errors }" placeholder="Id">
+      <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+        <div *ngIf="f.id.errors.required">Campo requerido</div>
       </div>
     </div>
-    <div class="form-group">
-      <label>Descripción</label>
-      <input type="text" class="form-control form-control-sm" placeholder="Ej: GECO para el paciente 16 en DS">
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="geco_pr">
-          <label class="form-check-label" for="geco_pr">
-            URL para PR
-          </label>
-        </div>
+    <div class="form-group col-md-3">
+      <label>Tipo de id *</label>
+      <select formControlName="tipo" class="form-control form-control-sm"
+      [ngClass]="{ 'is-invalid': submitted && f.tipo.errors }">
+        <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
+      </select>
+      <div *ngIf="submitted && f.tipo.errors" class="invalid-feedback">
+        <div *ngIf="f.tipo.errors.required">Campo requerido</div>
       </div>
-      <div class="col-md-6 text-right">
+    </div>
+    <div class="form-group col-md-3" *ngIf="proyecto === 'GECO'">
+      <label>Procedimiento Id</label>
+      <input formControlName="idProcedimiento" class="form-control form-control-sm" placeholder="Procedimiento Id">
+    </div>
+    <div class="form-group col-md-3" *ngIf="proyecto === 'GECO'">
+      <label>Consentimiento Id</label>
+      <input formControlName="idConsentimiento" class="form-control form-control-sm" placeholder="Consentimiento Id">
+    </div>
+    <div class="form-group col-md-6" *ngIf="proyecto === 'HSU'">
+      <label>/&lt;código-vista&gt;/&lt;clasificación&gt;/&lt;origen&gt;/&lt;bloque&gt;</label>
+      <input formControlName="rutaHs" class="form-control form-control-sm" placeholder="Ej: /hspr/persona/pers">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Descripción *</label>
+    <input type="text" formControlName="descripcion" class="form-control form-control-sm"
+    [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" placeholder="Ej: GECO para el paciente 16 en DS">
+    <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+      <div *ngIf="f.descripcion.errors.required">Campo requerido</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input formControlName="pruebas" class="form-check-input" type="checkbox" id="geco_pr">
+        <label class="form-check-label" for="geco_pr">
+          URL para PR
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6 text-right">
+        <button type="button" class="btn btn-light btn-sm" (click)="submitted = false; formulario.reset()">Limpiar</button>&nbsp;
         <button type="submit" class="btn btn-primary btn-sm">Añadir</button>
-      </div>
     </div>
-  </form>
+  </div>
+</form>
+<app-home-tabla [proyecto]="proyecto" [actualizar]="actualizar"></app-home-tabla>

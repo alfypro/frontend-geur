@@ -11,8 +11,7 @@
 
     <div [attr.id]="'collapse' + i" class="collapse" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
       <div class="card-body">
-        <app-home-form [tipos]="proyecto.tipos" [proyecto]="proyecto.alias"></app-home-form>
-        <app-home-tabla></app-home-tabla>
+        <app-home-form [tipos]="proyecto.tipos" [proyecto]="proyecto.alias" [urlPr]="proyecto.urlPr" [urlDs]="proyecto.urlDs"></app-home-form>
       </div>
     </div>
   </div>
