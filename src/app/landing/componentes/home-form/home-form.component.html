@@ -34,7 +34,7 @@
   <div class="form-group">
     <label>Descripción *</label>
     <input type="text" formControlName="descripcion" class="form-control form-control-sm"
-    [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" placeholder="Ej: GECO para el paciente 16 en DS">
+    [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" placeholder="Ej: {{proyecto}} para el paciente 16 en DS">
     <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
       <div *ngIf="f.descripcion.errors.required">Campo requerido</div>
     </div>

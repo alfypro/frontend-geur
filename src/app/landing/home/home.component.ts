@@ -6,6 +6,7 @@ const PROYECTOS = [
         tipos: ['cipa', 'poblationalId', 'codint'],
         alias: 'GECO',
         urlPr: 'https://argoss-pr.saludcastillayleon.es/geco/home',
+        // urlDs: 'http://localhost:4200/home',
         urlDs: 'https://argoss-ds.saludcastillayleon.es/geco/home'
     },
     {

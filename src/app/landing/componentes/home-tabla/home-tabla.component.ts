@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ObjectUrl } from '../../modelos/ofuscacion';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home-tabla',
@@ -43,8 +44,21 @@ export class HomeTablaComponent implements OnInit {
   }
 
   eliminarElemento(index: number): void {
-    this.lista.splice(index, 1);
-    localStorage.setItem(this.proyecto, JSON.stringify(this.lista));
+    swal({
+      title: '¡Atención!',
+      text: '¿Está seguro que desea eliminar el enlace?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#27c24c',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.lista.splice(index, 1);
+        localStorage.setItem(this.proyecto, JSON.stringify(this.lista));
+      }
+    });
   }
 
 }

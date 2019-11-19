@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href /tools/geur/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +26,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "rxjs": "6.0.0",
+    "sweetalert2": "7.18.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

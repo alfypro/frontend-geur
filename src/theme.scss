@@ -43,50 +43,72 @@ $link-hover-color: lighten($primary, 15%) !default;
 $link-hover-decoration: underline !default;
 
 // Bootstrap and its default variables
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import "node_modules/bootstrap/scss/bootstrap";
 
 @mixin linearGradient($top, $bottom) {
-    background: $top; /* Old browsers */
-    background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0%, $top),
-        color-stop(100%, $bottom)
-    ); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
-    background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, $top),
+    color-stop(100%, $bottom)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+// Personalización de sweetalert2
+.swal2-popup {
+  width: 26em !important;
+}
+.swal2-icon {
+  margin: 1em auto 1.2em !important;
+}
+.swal2-title {
+  font-size: 1.75em !important;
+}
+.swal2-content {
+  margin: 10px;
+  font-size: 1em !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.swal2-popup .swal2-styled {
+  margin: 0 0.3125em !important;
+  padding: 0.3em 0.8em !important;
+  font-weight: normal !important;
+  box-shadow: none;
 }
 
 body {
-    color: $gray-800;
+  color: $gray-800;
 }
 
 .navbar-bexter {
-    background-color: $theme-blue;
+  background-color: $theme-blue;
 }
 /* change the brand and text color */
 .navbar-bexter .navbar-brand,
 .navbar-bexter .navbar-text {
-    color: $gray-400;
+  color: $gray-400;
 }
 /* change the link color */
 .navbar-bexter .navbar-nav .nav-link {
-    color: $gray-400;
+  color: $gray-400;
 }
 /* change the color of active or hovered links */
 .navbar-bexter .nav-item.active .nav-link,
 .navbar-bexter .nav-item:hover .nav-link {
-    color: $white;
+  color: $white;
 }
-.blanco{
-    color: $white;
+.blanco {
+  color: $white;
 }
-.table{
-    color: $gray-600;
+.table {
+  color: $gray-600;
 }
 /* change the brand and text color */
